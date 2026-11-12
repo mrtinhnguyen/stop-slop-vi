@@ -1,0 +1,25 @@
+{
+  "name": "stop-slop-vi",
+  "owner": {
+    "name": "mrtinhnguyen",
+    "url": "https://github.com/mrtinhnguyen"
+  },
+  "metadata": {
+    "description": "Bộ skill bỏ giọng AI khỏi tài liệu tiếng Việt",
+    "version": "2.0.0"
+  },
+  "plugins": [
+    {
+      "name": "stop-slop-vi",
+      "source": "./plugins/stop-slop-vi",
+      "description": "Chặn dấu vết AI (em-dash, liệt kê bằng dấu ·, emoji trang trí, văn dịch, cách trước dấu câu) trong tài liệu tiếng Việt ngay từ lúc viết, làm sạch tài liệu có sẵn hoặc khớp giọng với tài liệu khác. Xử lý cả văn tự sự (tiểu luận, blog, bình luận). Kèm scanner cho docx/pptx/xlsx/md.",
+      "category": "productivity"
+    },
+    {
+      "name": "stakeholder-brief",
+      "source": "./plugins/stakeholder-brief",
+      "description": "Dựng lại tài liệu kỹ thuật thành tài liệu chia sẻ (HTML/DOCX/MD) theo tầm đọc của một đối tượng cụ thể: lãnh đạo, PM phía khách hàng, lập trình viên team khác. Nên dùng cùng stop-slop-vi.",
+      "category": "productivity"
+    }
+  ]
+}

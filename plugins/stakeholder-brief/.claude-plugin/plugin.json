@@ -1,0 +1,13 @@
+{
+  "name": "stakeholder-brief",
+  "description": "Skill dựng lại tư liệu phát triển thành tài liệu chia sẻ tiếng Việt theo tầm đọc của một đối tượng (lãnh đạo, PM phía khách hàng, lập trình viên team khác hoặc phía khách hàng)",
+  "version": "2.0.0",
+  "author": {
+    "name": "mrtinhnguyen",
+    "url": "https://github.com/mrtinhnguyen"
+  },
+  "homepage": "https://github.com/mrtinhnguyen/stop-slop-vi",
+  "repository": "https://github.com/mrtinhnguyen/stop-slop-vi",
+  "license": "MIT",
+  "keywords": ["vietnamese", "stakeholder", "report", "docx", "html", "tiếng Việt"]
+}

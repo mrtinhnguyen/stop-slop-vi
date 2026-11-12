@@ -1,0 +1,21 @@
+{
+  "name": "stop-slop-vi",
+  "description": "Skill và scanner bỏ giọng AI khỏi tài liệu công việc tiếng Việt (biên bản, báo cáo, đề xuất, email, pptx/docx/xlsx) và văn tự sự (tiểu luận, blog, bình luận)",
+  "version": "2.0.0",
+  "author": {
+    "name": "mrtinhnguyen",
+    "url": "https://github.com/mrtinhnguyen"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vietnamese",
+    "writing",
+    "ai-slop",
+    "stop-slop",
+    "docx",
+    "pptx",
+    "tiếng Việt"
+  ],
+  "homepage": "https://github.com/mrtinhnguyen/stop-slop-vi",
+  "repository": "https://github.com/mrtinhnguyen/stop-slop-vi"
+}
