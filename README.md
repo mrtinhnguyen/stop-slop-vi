@@ -146,6 +146,47 @@ stakeholder-brief cài riêng vẫn chạy, nhưng được thiết kế để g
 
 Cài xong thì khởi động lại Claude Code. Mở `/plugin` để xem các plugin đã cài.
 
+### Cài không cần dòng lệnh
+
+**App desktop Claude Code (tab Code):** bấm **+** cạnh ô nhập, chọn **Add plugins**, thêm marketplace `mrtinhnguyen/stop-slop-vi`, rồi chọn plugin cần cài.
+
+**VS Code:** mở **Manage plugins**, thêm marketplace ở tab **Marketplaces**, rồi bấm **Install** ở tab **Plugins**.
+
+**Khai báo trong file cấu hình:** thêm đoạn sau vào `~/.claude/settings.json` (cho riêng bạn) hoặc `.claude/settings.json` của repo (cho cả nhóm). Khai báo trong repo chỉ bật plugin; mỗi người vẫn cài một lần bằng giao diện ở trên.
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "stop-slop-vi": {
+      "source": { "source": "github", "repo": "mrtinhnguyen/stop-slop-vi" },
+      "autoUpdate": true
+    }
+  },
+  "enabledPlugins": {
+    "stop-slop-vi@stop-slop-vi": true,
+    "stakeholder-brief@stop-slop-vi": true
+  }
+}
+```
+
+### Dùng trên claude.ai (bản web)
+
+claude.ai không cài plugin Claude Code mà có hệ thống plugin và skill riêng. Có ba cách:
+
+- **Thêm marketplace:** **Customize > Plugins > Add > Add marketplace**, nhập `mrtinhnguyen/stop-slop-vi`.
+- **Tải lên file zip** (lấy ở trang [Releases](https://github.com/mrtinhnguyen/stop-slop-vi/releases) hoặc tự đóng gói như bên dưới):
+  - `stop-slop-vi-skill.zip`, `stakeholder-brief-skill.zip`: **Customize > Skills > + > Upload a skill**
+  - `stop-slop-vi-plugin.zip`, `stakeholder-brief-plugin.zip`: **Customize > Plugins > Add > Upload plugin**
+- **Cho cả tổ chức (Team/Enterprise):** Owner vào **Organization settings > Plugins & skills > Add**, chọn **Add marketplace** hoặc **Sync from GitHub**, rồi đặt mức **Installed by default** hoặc **Required**.
+
+Trên claude.ai, skill hoạt động khi tổ chức bật **Cloud code execution and file creation** và **Skills**. Quy tắc và tài liệu tham chiếu dùng được đầy đủ. Hook tự áp dụng chỉ chạy trong Claude Code. Scanner `slop_scan.py` có chạy được trên claude.ai hay không thì tài liệu của Anthropic chưa nói rõ.
+
+Tự đóng gói zip (ra thư mục `dist/`):
+
+```bash
+python scripts/build_zips.py
+```
+
 **Yêu cầu**
 - Scanner và hook: Python 3.8 trở lên (macOS/Linux dùng `python3`, Windows dùng `python`)
 - Hook tự áp dụng chạy bằng `sh`. Windows cần Git Bash (có sẵn trong Git for Windows). Không có Git Bash thì chỉ hook không chạy, skill và scanner vẫn dùng được

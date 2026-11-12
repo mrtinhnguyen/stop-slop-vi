@@ -3,3 +3,4 @@ __pycache__/
 .DS_Store
 *.packed.html
 *.artifact.html
+dist/
